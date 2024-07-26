@@ -1,0 +1,38 @@
+
+###
+# Get all books
+GET http://localhost:13000/books
+###
+
+###
+# Get a book by id
+GET http://localhost:13000/books/1
+###
+
+
+###
+# Insert a new book
+POST http://localhost:13000/books
+Content-Type: application/json
+
+{
+    "name": "Book create using rest client"
+}
+###
+
+###
+# Update a book
+PUT http://localhost:13000/books/1
+Content-Type: application/json
+
+{
+    "name": "Book 1 updated"
+}
+###
+
+###
+# Delete a  by id
+DELETE http://localhost:13000/books/1
+Content-Type: application/json
+
+###

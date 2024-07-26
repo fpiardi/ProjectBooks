@@ -1,0 +1,36 @@
+services: 
+
+  app:
+    image: book-node-app
+    depends_on:
+      - database
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - $NODE_DOCKER_PORT:$NODE_LOCAL_PORT
+    environment:
+      - DB_HOST=database-container
+      - DB_USER=$DB_USER
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_NAME=$DB_NAME
+      - DB_PORT=$DB_PORT
+    networks:
+      - book-network
+  
+  database:
+    image: postgres
+    container_name: database-container
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - POSTGRES_USER=$DB_USER
+      - POSTGRES_PASSWORD=$DB_PASSWORD
+      - POSTGRES_DB=$DB_NAME
+    ports:
+      - $DB_PORT:$DB_PORT
+    networks:
+      - book-network
+
+networks:
+  book-network:
+    driver: bridge
