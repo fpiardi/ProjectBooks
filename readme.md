@@ -37,7 +37,6 @@ Provide instructions on how to run the mobile app.
 - Or use a command line to build and install app:
 - - gradlew installDebug
 - - adb install path/to/your_app.apk
-- - other option is use the **app-debu.apk** in docs folder
 - **Note**: use ifconfig or ipconfig to get the correct ip address of your computer and update it in the **app/src/main/java/com/example/books/data/RetrofitClient.kt** file
 
 ```kotlin
@@ -50,6 +49,18 @@ Retrofit.Builder()
     <tr>
         <td width="50%"><img src="docs/rest-client.png"/></td>
         <td width="50%"><img src="docs/swagger.png"/></td>
+    </tr>
+    <tr>
+        <td width="100%"><img src="docs/docker-desktop.png"/></td>
+    </tr>
+</table>
+
+### Screenshots Mobile / Android
+<table width="100%">
+    <tr>
+        <td width="33%"><img src="docs/android-app1.jpg"/></td>
+        <td width="33%"><img src="docs/android-app2.jpg"/></td>
+        <td width="33%"><img src="docs/android-app3.jpg"/></td>
     </tr>
 </table>
 
