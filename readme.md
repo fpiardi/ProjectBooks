@@ -26,8 +26,8 @@ Provide instructions on how to run the mobile app.
 ### How to run backend service
 - You need a docker installed
 - After cloning the project, go to backend folder and run:
--- docker build -t book-node-app .   
--- docker compose up
+- - docker build -t book-node-app .   
+- - docker compose up
 
 
 ## Mobile App (Android)
@@ -37,8 +37,8 @@ Provide instructions on how to run the mobile app.
 - Or use a command line to build and install app:
 - - gradlew installDebug
 - - adb install path/to/your_app.apk
-- - other option is use the *app-debu.apk* in docs folder
-- *Note*: use ifconfig or ipconfig to get the correct ip address of your computer and update it in the app/src/main/java/com/example/books/data/RetrofitClient.kt file
+- - other option is use the **app-debu.apk** in docs folder
+- **Note**: use ifconfig or ipconfig to get the correct ip address of your computer and update it in the **app/src/main/java/com/example/books/data/RetrofitClient.kt** file
 
 ```kotlin
 Retrofit.Builder()
@@ -54,10 +54,10 @@ Retrofit.Builder()
 </table>
 
 ### TODOs
-- *Backend*
+- **Backend**
 - - Migrate backend node.js to Typescrypt
 - - Add JWT Authentication
-- *Mobile*
+- **Mobile**
 - - Use strings to internationalize messages
 - - Save search books in a local database (datastore, shared preferences)
 - - Migrating Retrofit to Ktor to use KMM and test iOS version 
