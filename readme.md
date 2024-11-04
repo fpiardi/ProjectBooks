@@ -26,8 +26,7 @@ Provide instructions on how to run the mobile app.
 ### How to run backend service
 - You need a docker installed
 - After cloning the project, go to backend folder and run:
-- - docker build -t book-node-app .   
-- - docker compose up
+- - docker compose up -d
 
 
 ## Mobile App (Android)

@@ -1,7 +1,8 @@
 services: 
 
   app:
-    image: book-node-app
+    container_name: node-app
+    build: .
     depends_on:
       - database
     restart: unless-stopped
