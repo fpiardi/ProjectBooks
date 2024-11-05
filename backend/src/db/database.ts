@@ -1,4 +1,4 @@
-const dbConfig = require("./config.js");
+import dbConfig from "./config.ts";
 
 const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
@@ -15,4 +15,4 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   }
 });
 
-module.exports = sequelize;
+export default sequelize;

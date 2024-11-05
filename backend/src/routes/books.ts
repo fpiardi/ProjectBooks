@@ -1,5 +1,10 @@
-const controller = require('../controllers/book');
+
 const router = require('express').Router();
+import { getBooks } from '../controllers/book';
+import { getBook } from '../controllers/book';
+import { createBook } from '../controllers/book';
+import { updateBook } from '../controllers/book';
+import { deleteBook } from '../controllers/book';
 
 /**
  * @swagger
@@ -44,7 +49,7 @@ const router = require('express').Router();
  *                          items:
  *                              $ref: '#components/schema/Book'
  */
-router.get('/books', controller.getBooks); 
+router.get('/books', getBooks); 
 
 /**
  * @swagger
@@ -72,7 +77,7 @@ router.get('/books', controller.getBooks);
  *          404:
  *              description: Book not found!
  */
-router.get('/books/:id', controller.getBook);
+router.get('/books/:id', getBook);
 
 /**
  * @swagger
@@ -91,7 +96,7 @@ router.get('/books/:id', controller.getBook);
  *          200:
  *              description: Book created successfully!
  */
-router.post('/books', controller.createBook); 
+router.post('/books', createBook); 
 
 /**
  * @swagger
@@ -119,7 +124,7 @@ router.post('/books', controller.createBook);
  *          404:
  *              description: Book not found!
  */
-router.put('/books/:id', controller.updateBook); 
+router.put('/books/:id', updateBook); 
 
 
 /**
@@ -142,6 +147,6 @@ router.put('/books/:id', controller.updateBook);
  *          404:
  *              description: Book not found!
  */
-router.delete('/books/:id', controller.deleteBook); 
+router.delete('/books/:id', deleteBook); 
 
 module.exports = router;

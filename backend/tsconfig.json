@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true
+
+  }
+  // "extends": "@tsconfig/node22/tsconfig.json",
+  // "include": ["src/**/*"],
+  // "exclude": ["node_modules"],
+  // "display": "Node 22",
+
+  // "compilerOptions": {
+  //   "outDir": "./dist",
+  //   "allowJs": true
+  // }
+}
+  

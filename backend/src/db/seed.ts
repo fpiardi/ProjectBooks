@@ -1,7 +1,7 @@
-const Book = require('../models/book');
+import Book from '../models/book';
 
 Book.findAll()
-    .then(books => {
+    .then((books: typeof Book[]) => {
         console.log(books)
         if (books.length == 0) {
             console.log("Seeding database with initial data");
@@ -36,4 +36,4 @@ Book.findAll()
         );
         }
     })
-    .catch(err => console.log(err));
+    //.catch((err) => console.log(err));

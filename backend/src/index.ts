@@ -1,9 +1,13 @@
-const express = require('express');
-const swaggerUI = require('swagger-ui-express');
-const swaggerSpec = require('./routes/swagger');
-const bodyparser = require('body-parser');
-const sequelize = require('./db/database');
-const cors = require('cors');
+
+import express from 'express'; 
+import swaggerUI from 'swagger-ui-express';
+import bodyparser from 'body-parser';
+import cors from 'cors';
+
+import swaggerSpec from './routes/swagger';
+import sequelize from './db/database';
+import errorHandler from "./middlewares/errors";
+
 require('./models/book');
 
 const app = express();
@@ -20,7 +24,8 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
 // Serve Swagger documentation
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
+app.use('/docs', swaggerUI.serve);
+app.get('/docs', swaggerUI.setup(swaggerSpec));
 
 
 //test route
@@ -33,21 +38,16 @@ app.get('/', (req, res, next) => {
 //book routes
 app.use('/', require('./routes/books'));
 
-//error handling
-app.use((error, req, res, next) => {
-  console.log(error);
-  const status = error.statusCode || 500;
-  const message = error.message;
-  res.status(status).json({ message: message });
-});
+// Error handling
+app.use(errorHandler);
 
 //sync database
 sequelize
   .sync()
-  .then(result => {
+  .then(() => {
     console.log("Database connected");
     require('./db/seed');
 
     app.listen(process.env.NODE_LOCAL_PORT);
   })
-  .catch(err => console.log(err));
+  .catch((err: any) => console.log(err));

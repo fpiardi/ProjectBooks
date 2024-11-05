@@ -72,3 +72,8 @@ Retrofit.Builder()
 - - Save search books in a local database (datastore, shared preferences)
 - - Migrating Retrofit to Ktor to use KMM and test iOS version 
 
+#### Migrating nodejs to typescript
+- npm install -D typescript @types/node @types/express
+- npx tsc -v (check if installed)
+- npm install -D typescript @tsconfig/node22
+- npm install --save-dev ts-node typescript
